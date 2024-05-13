@@ -21,14 +21,14 @@ function createBox(top = 200, left = 200) {
     let deg = 1;
     let rotateInterval;
 
-    box.addEventListener("pointerover", function (e) {
+    box.addEventListener("pointerover", function () {
         rotateInterval = setInterval(() => {
             box.style.transform = `rotate(${deg}deg)`;
             deg += 1;
         }, 10);
     })
 
-    box.addEventListener("pointerout", function (e) {
+    box.addEventListener("pointerout", function () {
         clearInterval(rotateInterval);
     })
 
@@ -92,11 +92,11 @@ let closeInstructionsButton = document.querySelector(".closeInstructions");
 let instructions = document.querySelector(".instructions");
 
 
-button.addEventListener("click", function (e) {
+button.addEventListener("click", function () {
     instructions.classList.toggle("hide");
 })
 
-closeInstructionsButton.addEventListener("click", function (e) {
+closeInstructionsButton.addEventListener("click", function () {
     instructions.classList.toggle("hide");
 })
 
