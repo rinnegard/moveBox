@@ -1,5 +1,5 @@
 
-let body = document.querySelector("body");
+let main = document.querySelector("main");
 let box;
 let currentBox;
 let prevBox;
@@ -15,7 +15,7 @@ function createBox(top = 200, left = 200) {
     box.style.left = `${left}px`;
     box.style.top = `${top}px`;
 
-    body.prepend(box);
+    main.append(box);
 
     let deg = 1;
     let rotateInterval;
