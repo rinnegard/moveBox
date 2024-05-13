@@ -1,6 +1,5 @@
 
 let main = document.querySelector("main");
-let box;
 let currentBox;
 let prevBox;
 
@@ -53,14 +52,12 @@ function createBox(top = 200, left = 200) {
         }
     })
 
-
-    return box;
 }
 
 main.addEventListener("click", function (e) {
     console.log(e);
     if (e.ctrlKey == false && e.shiftKey == false && e.target.localName == "main") {
-        box = createBox(e.y, e.x);
+        createBox(e.y, e.x);
     }
 })
 
