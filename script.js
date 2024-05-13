@@ -4,6 +4,7 @@ let box;
 let currentBox;
 let prevBox;
 
+
 function createBox(top = 200, left = 200) {
     let box = document.createElement("div");
     
@@ -54,7 +55,6 @@ function createBox(top = 200, left = 200) {
 
 
     return box;
-    
 }
 
 main.addEventListener("click", function (e) {
