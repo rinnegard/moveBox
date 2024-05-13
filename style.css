@@ -1,0 +1,13 @@
+header {
+    background-color: steelblue;
+    display: flex;
+    justify-content: center;
+    margin: 0 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: slategray;
+    margin: 0;
+}
