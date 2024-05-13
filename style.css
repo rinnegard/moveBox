@@ -31,6 +31,13 @@ button {
     cursor: pointer;
 }
 
+.instructions {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 300px;
+    background-color: aquamarine;
+}
+
 .hide {
     visibility: hidden;
 }

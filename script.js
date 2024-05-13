@@ -85,9 +85,12 @@ window.addEventListener("keydown", function (e) {
 })
 
 
-let instructions = document.querySelector("button");
-instructions.addEventListener("click", function (e) {
-    alert(e.currentTarget);
+let button = document.querySelector("button");
+let instructions = document.querySelector(".instructions");
+
+
+button.addEventListener("click", function (e) {
+    instructions.classList.toggle("hide");
 })
 
 
