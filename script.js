@@ -1,6 +1,8 @@
 
 let body = document.querySelector("body");
 let box;
+let currentBox;
+let prevBox;
 
 function createBox(top = 200, left = 200) {
     let box = document.createElement("div");
@@ -37,6 +39,19 @@ function createBox(top = 200, left = 200) {
         }
     })
 
+    box.addEventListener("click", function (e) {
+        console.log(e.shiftKey);
+        if (e.shiftKey == true) {
+            prevBox = currentBox;
+            if (prevBox) {
+                prevBox.style.backgroundColor = "Black"
+            }
+            console.log(e.currentTarget);
+            currentBox = e.currentTarget;
+            currentBox.style.backgroundColor = "Cyan"
+        }
+    })
+
 
     return box;
     
@@ -44,33 +59,25 @@ function createBox(top = 200, left = 200) {
 
 window.addEventListener("click", function (e) {
     console.log(e);
-    if (e.ctrlKey == false) {
+    if (e.ctrlKey == false && e.shiftKey == false) {
         box = createBox(e.y, e.x);
     }
 })
 
 window.addEventListener("keydown", function (e) {
-    if (e.key == "ArrowDown") {
-        box.style.backgroundColor = "blue";
-        box.style.bottom = "100px";
 
-    } 
     switch (e.key) {
         case "ArrowDown":
-            box.style.backgroundColor = "blue";
-            box.style.top = (Number(box.style.top.replace("px", "")) + 5) + "px";
+            currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) + 5) + "px";
             break;
         case "ArrowUp":
-            box.style.backgroundColor = "red";
-            box.style.top = (Number(box.style.top.replace("px", "")) - 5) + "px";
+            currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) - 5) + "px";
             break;
-        case "ArrowRight":
-            box.style.backgroundColor = "green";
-            box.style.left = (Number(box.style.left.replace("px", "")) + 5) + "px";
+        case "ArrowRight":;
+            currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) + 5) + "px";
             break;    
         case "ArrowLeft":
-            box.style.backgroundColor = "yellow";
-            box.style.left = (Number(box.style.left.replace("px", "")) - 5) + "px";
+            currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) - 5) + "px";
             break;   
         default:
             break;
