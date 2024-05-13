@@ -11,6 +11,13 @@ header {
 
 }
 
+.boxLogo {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    rotate: 15deg;
+}
+
 main {
     height: calc(100% - 100px);
     background-color: slategray;
