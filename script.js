@@ -59,7 +59,7 @@ function createBox(top = 200, left = 200) {
 
 main.addEventListener("click", function (e) {
     console.log(e);
-    if (e.ctrlKey == false && e.shiftKey == false) {
+    if (e.ctrlKey == false && e.shiftKey == false && e.target.localName == "main") {
         box = createBox(e.y, e.x);
     }
 })
@@ -86,10 +86,17 @@ window.addEventListener("keydown", function (e) {
 
 
 let button = document.querySelector("button");
+let closeInstructionsButton = document.querySelector(".closeInstructions");
+
+
 let instructions = document.querySelector(".instructions");
 
 
 button.addEventListener("click", function (e) {
+    instructions.classList.toggle("hide");
+})
+
+closeInstructionsButton.addEventListener("click", function (e) {
     instructions.classList.toggle("hide");
 })
 
