@@ -57,7 +57,7 @@ function createBox(top = 200, left = 200) {
     
 }
 
-window.addEventListener("click", function (e) {
+main.addEventListener("click", function (e) {
     console.log(e);
     if (e.ctrlKey == false && e.shiftKey == false) {
         box = createBox(e.y, e.x);
@@ -82,6 +82,12 @@ window.addEventListener("keydown", function (e) {
         default:
             break;
     }
+})
+
+
+let instructions = document.querySelector("button");
+instructions.addEventListener("click", function (e) {
+    alert(e.currentTarget);
 })
 
 
