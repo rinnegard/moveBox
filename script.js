@@ -64,15 +64,19 @@ main.addEventListener("click", function (e) {
 window.addEventListener("keydown", function (e) {
 
     switch (e.key) {
+        case "s":
         case "ArrowDown":
             currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) + 5) + "px";
             break;
+        case "w":
         case "ArrowUp":
             currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) - 5) + "px";
             break;
+        case "d":
         case "ArrowRight":;
             currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) + 5) + "px";
-            break;    
+            break;
+        case "a":
         case "ArrowLeft":
             currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) - 5) + "px";
             break;   
