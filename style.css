@@ -11,6 +11,11 @@ header {
 
 }
 
+footer {
+    height: 100px;
+    background-color: steelblue;
+}
+
 .boxLogo {
     height: 50px;
     width: 50px;
@@ -19,7 +24,7 @@ header {
 }
 
 main {
-    height: calc(100% - 100px);
+    height: calc(100% - 100px - 100px);
     background-color: slategray;
 }
 

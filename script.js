@@ -62,24 +62,34 @@ main.addEventListener("click", function (e) {
 })
 
 window.addEventListener("keydown", function (e) {
-
+    e.preventDefault;
+    console.log(currentBox.style.top);
+    console.log(currentBox.style.left);
     switch (e.key) {
         case "s":
         case "ArrowDown":
-            currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) + 5) + "px";
+            if ((Number(currentBox.style.top.replace("px", ""))) < this.window.innerHeight - 250) {
+                currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) + 5) + "px";
+            }
             break;
         case "w":
         case "ArrowUp":
-            currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) - 5) + "px";
+            if ((Number(currentBox.style.top.replace("px", ""))) > 100) {
+                currentBox.style.top = (Number(currentBox.style.top.replace("px", "")) - 5) + "px";
+            } 
             break;
         case "d":
         case "ArrowRight":;
+        if ((Number(currentBox.style.left.replace("px", ""))) < this.window.innerWidth - 170) {
             currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) + 5) + "px";
+        }
             break;
         case "a":
         case "ArrowLeft":
-            currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) - 5) + "px";
-            break;   
+            if ((Number(currentBox.style.left.replace("px", ""))) > 0) {
+                currentBox.style.left = (Number(currentBox.style.left.replace("px", "")) - 5) + "px";
+            } 
+            break;
         default:
             break;
     }
